@@ -32,6 +32,14 @@ public class PasswordStrengthMeter extends LinearLayout {
         init();
     }
 
+    public void setVertical(){
+        this.setOrientation(LinearLayout.VERTICAL);
+    }
+
+    public void setHorizontal(){
+        this.setOrientation(LinearLayout.HORIZONTAL);
+    }
+
     public void setFirstText(String text){
         chooseApassword.setText(text);
     }
