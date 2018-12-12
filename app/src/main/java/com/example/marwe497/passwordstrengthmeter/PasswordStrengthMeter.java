@@ -62,7 +62,7 @@ public class PasswordStrengthMeter extends LinearLayout {
         this.setOrientation(LinearLayout.VERTICAL);
         chooseApassword.setText("Choose a password: ");
         vertLayout.setOrientation(LinearLayout.VERTICAL);
-        edTxt.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD );
+        edTxt.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         textInst.setText("Minimum of 8 characters in length");
         textInst.setTextColor(Color.LTGRAY);
         vertLayout.addView(edTxt);
