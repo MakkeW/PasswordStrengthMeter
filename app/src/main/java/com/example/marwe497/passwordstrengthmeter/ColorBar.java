@@ -11,19 +11,44 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * Colorbar which displays the strength of the password
+ *
+ */
 public class ColorBar extends LinearLayout {
 
+    /**
+     * TextView that holds the description of th colorBar
+     */
     private TextView tVDesc = new TextView(getContext());
+    /**
+     * Texview that displays the result
+     */
     private TextView tVResult = new TextView(getContext());
 
+    /**
+     * Bar that displays the strength of the password
+     */
     private ProgressBar bar = new ProgressBar(getContext(),null,android.R.attr.progressBarStyleHorizontal);
 
+    /**
+     * Sets the list of conditions to check
+     * @param condList
+     * A list of conditions(AbstractCondStage)
+     */
     public void setCondList(ArrayList<AbstractCondStage> condList) {
         this.condList = condList;
     }
 
     private ArrayList<AbstractCondStage> condList = new ArrayList<>();
 
+    /**
+     * Checks all conditions if they are fulfilled or not
+     * @param strength
+     * Strength of the password
+     * @return
+     * If the password is strong enough or not
+     */
     public boolean checkStage(int strength){
         for (AbstractCondStage cond : condList) {
 
@@ -38,6 +63,13 @@ public class ColorBar extends LinearLayout {
         return false;
     }
 
+    /**
+     * Draws the bar
+     * @param color
+     * Color of the bar
+     * @param length
+     * Length of the bar between 0-100
+     */
     private void drawBar(int color, int length) {
         Drawable drawable = bar.getProgressDrawable();
         drawable.setColorFilter(new LightingColorFilter(0xFF000000, color));
@@ -65,6 +97,9 @@ public class ColorBar extends LinearLayout {
         init();
     }
 
+    /**
+     * Initializes the bar wih default values
+     */
     private void init(){
         this.setOrientation(LinearLayout.VERTICAL);
 
@@ -110,6 +145,7 @@ public class ColorBar extends LinearLayout {
                 setAllowed(false);
             }
         };
+
 
         AbstractCondStage Fair = new AbstractCondStage() {
             @Override

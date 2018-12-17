@@ -2,6 +2,9 @@ package com.example.marwe497.passwordstrengthmeter;
 
 public class DefaultAlgoritm extends AbstractPasswordAlgoritm {
     @Override
+    /**
+     * Default implementation of a PasswordAlgorithm
+     */
     public int getStrength(String password) {
 
         if(password.length() < 8){

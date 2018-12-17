@@ -32,26 +32,51 @@ public class PasswordStrengthMeter extends LinearLayout {
         init();
     }
 
+    /**
+     * Sets the PasswordStrengthMeter to a vertical layout
+     */
     public void setVertical(){
         this.setOrientation(LinearLayout.VERTICAL);
     }
 
+    /**
+     * Sets the PasswordStrengthMeter to a horizontal
+     */
     public void setHorizontal(){
         this.setOrientation(LinearLayout.HORIZONTAL);
     }
 
+    /**
+     * Sets the text to the left/above the editText
+     * @param text
+     */
     public void setFirstText(String text){
         chooseApassword.setText(text);
     }
 
+    /**
+     * Sets the instruction text
+     * @param text
+     */
     public void setInst(String text){
         textInst.setText(text);
     }
 
+    /**
+     * Set the description text
+     * @param text
+     */
     public void setDesc(String text){
         bar.gettVDesc().setText(text);
     }
 
+    /**
+     * Sets the algoritm to use for calculating the password strength
+     * Make sure that it only returns values that can be fullfilled by the conditions
+     * Default: 0-100 and -1
+     * @param algoritm
+     * algoritm to use
+     */
     public void setAlgoritm(AbstractPasswordAlgoritm algoritm) {
         this.algoritm = algoritm;
     }
