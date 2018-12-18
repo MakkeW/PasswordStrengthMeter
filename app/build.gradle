@@ -1,9 +1,8 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.marwe497.passwordstrengthmeter"
         minSdkVersion 26
         targetSdkVersion 28
         versionCode 1

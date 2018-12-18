@@ -9,4 +9,7 @@ public abstract class AbstractPasswordAlgoritm {
      * the strength of the password
      */
     public abstract int getStrength(String password);
+
+    public static final int MAXVALUE= 100;
+    public static final int MINVALUE = 0;
 }

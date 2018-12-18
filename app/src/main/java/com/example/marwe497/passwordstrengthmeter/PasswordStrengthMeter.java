@@ -90,6 +90,16 @@ public class PasswordStrengthMeter extends LinearLayout {
     private TextView textInst = new TextView(getContext());
     private ColorBar bar = new ColorBar(getContext());
 
+    public boolean isAllowed() {
+        return allowed;
+    }
+
+    public void setAllowed(boolean allowed) {
+        this.allowed = allowed;
+    }
+
+    private boolean allowed = false;
+
     private void init(){
         algoritm = new DefaultAlgoritm();
         this.setOrientation(LinearLayout.VERTICAL);
@@ -109,7 +119,8 @@ public class PasswordStrengthMeter extends LinearLayout {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                bar.checkStage(algoritm.getStrength(s.toString()));
+                setAllowed(bar.checkStage(algoritm.getStrength(s.toString())));
+
             }
 
             @Override
